@@ -28,14 +28,27 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
     void GeneratePallandrome()
     {
         string alphabets = "xm9";
-        int charAmount = Random.Range(9, 15);
+        int charAmount = Random.Range(9, 16);
         string mstring = "";
         string reverse = "";
-        for (int i = 1; i <= charAmount / 2; i++)
+        int Length;
+        int c;
+        if (charAmount % 2 == 0)
+        {
+            c = 1;  
+
+        }
+        else {
+            c = 0;
+        }
+
+        for (int i = c; i <= charAmount / 2; i++)
         {
             mstring += alphabets[Random.Range(0, alphabets.Length)];
         }
-        int Length = (charAmount / 2) - 1;
+
+        Length = (charAmount / 2) - 1;
+
         while (Length >= 0)
         {
             reverse = reverse + mstring[Length];
