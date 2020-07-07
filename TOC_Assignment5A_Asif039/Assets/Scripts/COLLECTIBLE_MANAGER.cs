@@ -17,9 +17,6 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
     public string myString;
     int charAmount;
     public int a;
-    public string first_alphabet;
-
-    public string last_alphabet;
     void Start()
     {
 
