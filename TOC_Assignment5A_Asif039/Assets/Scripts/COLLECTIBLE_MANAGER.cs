@@ -17,12 +17,14 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
     public string myString;
     int charAmount;
     public int a;
+    public string first_alphabet;
 
+    public string last_alphabet;
     void Start()
     {
 
-        a = Random.Range(3, 7);
-        GenerateStrings();
+        a = Random.Range(3, 8);
+        GenrateRandomString();
 
     }
 
@@ -32,7 +34,7 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
         int charAmount = Random.Range(9, 15);
         string mstring = "";
         string reverse = "";
-        for (int i = 0; i <= charAmount / 2; i++)
+        for (int i = 1; i <= charAmount / 2; i++)
         {
             mstring += alphabets[Random.Range(0, alphabets.Length)];
         }
@@ -65,10 +67,11 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
        
     }
 
-    public void GenerateStrings()
+    public void GenrateRandomString()
     {
         charAmount = Random.Range(9, 15);
 
+       
         for (int i = 0; i <= charAmount; i++)
         {
             myString += alphabets[Random.Range(0, alphabets.Length)];
@@ -98,7 +101,7 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
 
             else
             {
-                GenerateStrings();
+                GenrateRandomString();
             }
 
         }
