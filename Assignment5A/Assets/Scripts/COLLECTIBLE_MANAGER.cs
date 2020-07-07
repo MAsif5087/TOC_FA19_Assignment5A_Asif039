@@ -17,14 +17,12 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
     public string myString;
     int charAmount;
     public int a;
-    public string first_alphabet;
 
-    public string last_alphabet;
     void Start()
     {
 
-        a = Random.Range(3, 5);
-        THREE_STRINGS_MUST_BE_PALINDROME_CHECKER();
+        a = Random.Range(3, 7);
+        GenerateStrings();
 
     }
 
@@ -36,7 +34,7 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
         string reverse = "";
         for (int i = 0; i <= charAmount / 2; i++)
         {
-            mstring += alphabets[alphabets.Length];
+            mstring += alphabets[Random.Range(0, alphabets.Length)];
         }
         int Length = (charAmount / 2) - 1;
         while (Length >= 0)
@@ -67,7 +65,7 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
        
     }
 
-    public void THREE_STRINGS_MUST_BE_PALINDROME_CHECKER()
+    public void GenerateStrings()
     {
         charAmount = Random.Range(9, 15);
 
@@ -75,8 +73,6 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
         {
             myString += alphabets[Random.Range(0, alphabets.Length)];
 
-            // last_alphabet= myString.Substring(myString.Length - 1, 1).ToString();
-            //first_alphabet = myString.Substring(0,1);
         }
         if (isPalindrome(myString))
         {
@@ -102,7 +98,7 @@ public class COLLECTIBLE_MANAGER : MonoBehaviour
 
             else
             {
-                THREE_STRINGS_MUST_BE_PALINDROME_CHECKER();
+                GenerateStrings();
             }
 
         }
